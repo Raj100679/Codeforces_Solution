@@ -4,40 +4,33 @@ using namespace std;
 
 void solve()
 {
-  int x, n, m;
-  cin >> x >> n >> m;
-  while (n != 0)
-  {
-   if(x<=10 && m>0){
-     x=x-10;
-     m--;
-     break;
+ string s;
+ cin>>s;
+ int onec=0,zeroc=0;
+ for(int i=0;i<s.length();i++){
+   if(s[i]=='1'){
+     onec++;
    }
    else{
-     x=(x/2)+10;
-     n--;
+     zeroc++;
    }
-  }
-  while(m!=0){
-    x=x-10;
-    m--;
-  }
-
-  if (x > 0)
-  {
-    cout << "NO" << endl;
-  }
-  else
-  {
-    cout << "YES" << endl;
-  }
+ }
+ 
+ int mini=min(onec,zeroc);
+ if(mini&1){
+   cout<<"DA"<<endl;
+ }
+ else{
+   cout<<"NET"<<endl;
+ }
 }
+
 int32_t main()
 {
   int t;
   cin >> t;
   while (t--)
-    solve();
+  solve();
 
   return 0;
 }
